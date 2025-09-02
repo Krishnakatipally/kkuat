@@ -4,14 +4,14 @@ const app = express();
 
 const port = process.env.PORT || 3000;
 
-// Serve static files from "public"
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve React build static files
+app.use(express.static(path.join(__dirname, 'client/build')));
 
-// Fallback for SPA-like routing (optional)
+// Send React app for all routes
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server running on port ${port}`);
 });
