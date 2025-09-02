@@ -21,7 +21,7 @@ jobs:
   - name: Set up Node.js version
     uses: actions/setup-node@v3
     with:
-      node-version: '18.x'
+      node-version: '22.x'
 
   # Cache root dependencies (backend)
   - name: Cache root node_modules
@@ -80,4 +80,5 @@ jobs:
           app-name: 'kkuat'
           slot-name: 'Production'
           package: .
+
 
