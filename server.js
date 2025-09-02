@@ -4,6 +4,10 @@ const app = express();
 
 const port = process.env.PORT || 3000;
 
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
 // Serve React build static files
 app.use(express.static(path.join(__dirname, 'client/build')));
 
